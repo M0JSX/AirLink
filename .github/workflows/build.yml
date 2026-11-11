@@ -5,6 +5,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  # libopus's bundled CMakeLists predates CMake 4's minimum; let it configure anyway.
+  CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+
 jobs:
   build:
     strategy:

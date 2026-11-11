@@ -5,6 +5,7 @@ Set-Location (Join-Path $PSScriptRoot "..\..")
 
 $version = (Select-String -Path Cargo.toml -Pattern '^version = "(.+)"' | Select-Object -First 1).Matches.Groups[1].Value
 
+$env:CMAKE_POLICY_VERSION_MINIMUM = "3.5"   # libopus's CMakeLists predates CMake 4
 cargo build --release
 if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
 

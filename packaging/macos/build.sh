@@ -16,6 +16,7 @@ DMG=dist/AirLink-$VERSION-macos-universal.dmg
 # Build libopus from source and link it statically, so the app doesn't depend on Homebrew.
 export LIBOPUS_STATIC=1 LIBOPUS_NO_PKG=1 OPUS_STATIC=1 OPUS_NO_PKG=1 PKG_CONFIG=false
 export MACOSX_DEPLOYMENT_TARGET=11.0
+export CMAKE_POLICY_VERSION_MINIMUM=3.5   # libopus's CMakeLists predates CMake 4
 
 BINS=()
 for a in $ARCHS; do
