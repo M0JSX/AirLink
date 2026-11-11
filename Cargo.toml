@@ -1,0 +1,42 @@
+[package]
+name = "airlink"
+version = "0.3.0"
+edition = "2021"
+description = "Low-latency, high-fidelity two-way P2P audio link"
+license = "MIT"
+authors = ["M0JSX"]
+repository = "https://github.com/M0JSX/airlink"
+
+[dependencies]
+cpal = "0.15"
+opus = "0.3"
+eframe = "0.29"
+
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+# `cargo deb` -> target/debian/airlink_<ver>-1_<arch>.deb
+[package.metadata.deb]
+maintainer = "M0JSX"
+copyright = "M0JSX"
+section = "sound"
+priority = "optional"
+depends = "$auto"
+extended-description = """\
+AirLink is a two-way peer-to-peer IP audio codec for broadcast contribution. \
+It uses Opus in low-delay mode or uncompressed 24-bit PCM, with a jitter buffer, \
+packet-loss concealment and redundancy. Run with no arguments for the GUI or \
+with --headless for servers."""
+assets = [
+    ["target/release/airlink", "usr/bin/", "755"],
+    ["packaging/linux/airlink.desktop", "usr/share/applications/", "644"],
+    ["packaging/icons/airlink-256.png", "usr/share/icons/hicolor/256x256/apps/airlink.png", "644"],
+    ["packaging/icons/airlink.png", "usr/share/icons/hicolor/1024x1024/apps/airlink.png", "644"],
+    ["README.md", "usr/share/doc/airlink/README.md", "644"],
+]

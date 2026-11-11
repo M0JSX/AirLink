@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>                 <string>AirLink</string>
+    <key>CFBundleDisplayName</key>          <string>AirLink</string>
+    <key>CFBundleIdentifier</key>           <string>io.github.m0jsx.airlink</string>
+    <key>CFBundleExecutable</key>           <string>airlink</string>
+    <key>CFBundleIconFile</key>             <string>AirLink</string>
+    <key>CFBundlePackageType</key>          <string>APPL</string>
+    <key>CFBundleShortVersionString</key>   <string>@VERSION@</string>
+    <key>CFBundleVersion</key>              <string>@VERSION@</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>LSMinimumSystemVersion</key>       <string>11.0</string>
+    <key>LSApplicationCategoryType</key>    <string>public.app-category.music</string>
+    <key>NSHighResolutionCapable</key>      <true/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>AirLink sends audio from your selected input to the other end of the link.</string>
+</dict>
+</plist>

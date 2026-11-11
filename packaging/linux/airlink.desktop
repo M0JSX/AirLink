@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=AirLink
+GenericName=IP Audio Codec
+Comment=Low-latency two-way audio link
+Exec=airlink
+Icon=airlink
+Terminal=false
+Categories=AudioVideo;Audio;Network;
+Keywords=codec;audio;broadcast;remote;ob;
+StartupWMClass=airlink
